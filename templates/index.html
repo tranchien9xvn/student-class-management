@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Class Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+            font-size: 24px;
+        }
+        .container {
+            margin: 20px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #e2e2e2;
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #e74c3c;
+        }
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #2c3e50;
+            color: white;
+            font-size: 14px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Student Class Management System
+    </header>
+
+    <div class="container">
+        <h2>Class Information</h2>
+        <ul>
+            {% for student, score in students %}
+                <li>
+                    <span>{{ student }}</span> 
+                    <span>{{ score }} Points</span>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <div>
+            <button onclick="location.href='/add_student'">Add New Student</button>
+            <button onclick="location.href='/remove_student'">Remove Student</button>
+            <button onclick="location.href='/score_update'">Update Score</button>
+            <button onclick="location.href='/max_score'">View Max Score</button>
+            <button onclick="location.href='/min_score'">View Min Score</button>
+        </div>
+
+        {% if message %}
+            <p class="message">{{ message }}</p>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Student Class Management | <a href="/">Back to Dashboard</a></p>
+    </footer>
+
+</body>
+</html>

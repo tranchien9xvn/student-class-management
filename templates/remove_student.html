@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Student</title>
+</head>
+<body>
+    <h1>Remove Student</h1>
+    
+    <form method="POST">
+        <label for="name">Student Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <button type="submit">Remove Student</button>
+    </form>
+    
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    
+    <p><a href="/">Back to Class List</a></p>
+</body>
+</html>
